@@ -6,10 +6,4 @@ Abuse.ch is a research project hosted by the Institue for Cybersecurity and Engi
 * **URL Haus**:  A resource for sharing malware distribution sites.
 * **Threat Fox**:  A resource for sharing indicators of compromise (IOCs).
 
-Let us look into these platforms individually.
 
-## MalwareBazaar
-As the name suggests, this project is an all in one malware collection and analysis database. The project supports the following features:
-
-* **Malware Samples Upload**: Security analysts can upload their malware samples for analysis and build the intelligence database. This can be done through the browser or an API.
-* **Malware Hunting**: Hunting for malware samples is possible through setting up alerts to match various elements such as tags, signatures, YARA rules, ClamAV signatures and vendor detection.
