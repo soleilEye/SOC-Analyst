@@ -22,7 +22,7 @@ We are presented with an upload file screen from the Analysis tab on login. Here
 * **In-tray**: An Enterprise feature used to receive and process phish reports posted by team members through integrating Google Workspace and Microsoft 365.
 
 <p align="center">
-  <img src="https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/Threat%20Intelligence%20Tools/PhishTool/AnalysisTab.gif">
+  <img src="https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/Threat%20Intelligence%20Tools/PhishTool/History.png">
 </p>
 
 ## Analysis Tab
@@ -37,11 +37,11 @@ Once uploaded, we are presented with the details of our email for a more in-dept
 We can further perform lookups and flag indicators as malicious from these options. On the right-hand side of the screen, we are presented with the Plaintext and Source details of the email.
 
 <p align="center">
-  <img src="https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/Threat%20Intelligence%20Tools/PhishTool/Update.gif">
+  <img src="https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/Threat%20Intelligence%20Tools/PhishTool/AnalysisTab.gif">
 </p>
 
 Above the **`Plaintext`** section, we have a **`Resolve`** checkmark. Here, we get to perform the resolution of our analysis by classifying the email, setting up flagged artefacts and setting the classification codes. Once the email has been classified, the details will appear on the **`Resolution`** tab on the analysis of the email.
 
 <p align="center">
-  <img src="https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/Threat%20Intelligence%20Tools/PhishTool/History.png">
+  <img src="https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/Threat%20Intelligence%20Tools/PhishTool/Update.gif">
 </p>
