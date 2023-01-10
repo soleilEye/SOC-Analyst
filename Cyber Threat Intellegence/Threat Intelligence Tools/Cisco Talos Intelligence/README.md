@@ -12,10 +12,27 @@ Cisco Talos encompasses six key teams:
 * **Global Outreach**: Disseminates intelligence to customers and the security community through publications.
 
 
-
 ## Talos Dashboard
 Accessing the open-source solution, we are first presented with a reputation lookup dashboard with a world map. This map shows an overview of email traffic with indicators of whether the emails are legitimate, spam or malware across numerous countries. Clicking on any marker, we see more information associated with IP and hostname addresses, volume on the day and the type.
 
 <p align="center">
-  <img src="https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/Threat%20Intelligence%20Tools/UrlScan.io/urlscan.io.gif">
+  <img src="https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/Threat%20Intelligence%20Tools/Cisco%20Talos%20Intelligence/TalosWebsite.png">
+</p>
+
+At the top, we have several tabs that provide different types of intelligence resources. The primary tabs that an analyst would interact with are:
+
+* **Vulnerability Information**: Disclosed and zero-day vulnerability reports marked with CVE numbers and CVSS scores. Details of the vulnerabilities reported are provided when you select a specific report, including the timeline taken to get the report published. Microsoft vulnerability advisories are also provided, with the applicable snort rules that can be used.
+
+<p align="center">
+  <img src="https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/Threat%20Intelligence%20Tools/Cisco%20Talos%20Intelligence/Talos2.png">
+</p>
+
+* **Reputation Center**: Provides access to searchable threat data related to IPs and files using their SHA256 hashes. Analysts would rely on these options to conduct their investigations. Additional email and spam data can be found under the Email & Spam Data tab.
+
+<p align="center">
+  <img src="https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/Threat%20Intelligence%20Tools/Cisco%20Talos%20Intelligence/Talos3.png">
+</p>
+
+<p align="center">
+  <img src="https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/Threat%20Intelligence%20Tools/Cisco%20Talos%20Intelligence/Talos4.png">
 </p>
