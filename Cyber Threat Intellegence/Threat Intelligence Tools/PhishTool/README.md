@@ -22,5 +22,26 @@ We are presented with an upload file screen from the Analysis tab on login. Here
 * **In-tray**: An Enterprise feature used to receive and process phish reports posted by team members through integrating Google Workspace and Microsoft 365.
 
 <p align="center">
-  <img src="https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/Threat%20Intelligence%20Tools/UrlScan.io/urlscan.io.gif">
+  <img src="https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/Threat%20Intelligence%20Tools/PhishTool/AnalysisTab.gif">
+</p>
+
+## Analysis Tab
+Once uploaded, we are presented with the details of our email for a more in-depth look. Here, we have the following tabs:
+
+* **Headers**: Provides the routing information of the email, such as source and destination email addresses, Originating IP and DNS addresses and Timestamp.
+* **Received Lines**: Details on the email traversal process across various SMTP servers for tracing purposes.
+* **X-headers**: These are extension headers added by the recipient mailbox to provide additional information about the email.
+* **Security**: Details on email security frameworks and policies such as Sender Policy Framework (SPF), DomainKeys Identified Mail (DKIM) and Domain-based Message * **Authentication, Reporting and Conformance (DMARC).
+* **Attachments**: Lists any file attachments found in the email.
+* **Message URLs**: Associated external URLs found in the email will be found here.
+We can further perform lookups and flag indicators as malicious from these options. On the right-hand side of the screen, we are presented with the Plaintext and Source details of the email.
+
+<p align="center">
+  <img src="https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/Threat%20Intelligence%20Tools/PhishTool/Update.gif">
+</p>
+
+Above the **`Plaintext`** section, we have a **`Resolve`** checkmark. Here, we get to perform the resolution of our analysis by classifying the email, setting up flagged artefacts and setting the classification codes. Once the email has been classified, the details will appear on the **`Resolution`** tab on the analysis of the email.
+
+<p align="center">
+  <img src="https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/Threat%20Intelligence%20Tools/PhishTool/History.png">
 </p>
