@@ -20,3 +20,9 @@ Threat Intel is geared towards understanding the relationship between your opera
 <p align="center">
   <img src="https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/Threat%20Intelligence%20Tools/TI%20model.png">
 </p>
+
+## Tools in this section
+
+|Link        | Description           |
+|:-------------:|:------------:| 
+| [UrlScan.io](https://github.com/AM1RKA/SOC-Analyst/tree/main/Cyber%20Threat%20Intellegence/Threat%20Intelligence%20Tools/UrlScan.io)   |  Scanning and analysing websites. | 
