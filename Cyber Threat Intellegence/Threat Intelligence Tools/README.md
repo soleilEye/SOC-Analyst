@@ -25,4 +25,6 @@ Threat Intel is geared towards understanding the relationship between your opera
 
 |Link        | Description           |
 |:-------------:|:------------:| 
+| [UrlScan.io](https://github.com/AM1RKA/SOC-Analyst/tree/main/Cyber%20Threat%20Intellegence/Threat%20Intelligence%20Tools/UrlScan.io)   |  Scanning and analysing websites. |
+| [Abuse.ch](https://github.com/AM1RKA/SOC-Analyst/tree/main/Cyber%20Threat%20Intellegence/Threat%20Intelligence%20Tools/Abuse.ch)   |  Identify and track malware and botnets through several operational platforms developed under the project. | 
 | [UrlScan.io](https://github.com/AM1RKA/SOC-Analyst/tree/main/Cyber%20Threat%20Intellegence/Threat%20Intelligence%20Tools/UrlScan.io)   |  Scanning and analysing websites. | 
