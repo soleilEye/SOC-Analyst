@@ -8,8 +8,9 @@ To mitigate against risks, we can start by trying to answer a few simple questio
 - What's their motivation?
 - What are their capabilities?
 - What artefacts and indicators of compromise should you look out for?
-- Threat Intelligence Classifications:
-- Threat Intel is geared towards understanding the relationship between your operational environment and your adversary. With this in mind, we can break down threat intel into the following classifications: 
+
+Threat Intelligence Classifications:
+Threat Intel is geared towards understanding the relationship between your operational environment and your adversary. With this in mind, we can break down threat intel into the following classifications: 
 
 * **Strategic Intel**: High-level intel that looks into the organisation's threat landscape and maps out the risk areas based on trends, patterns and emerging threats that may impact business decisions.
 * **Technical Intel**: Looks into evidence and artefacts of attack used by an adversary. Incident Response teams can use this intel to create a baseline attack surface to analyse and develop defence mechanisms.
