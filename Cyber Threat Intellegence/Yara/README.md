@@ -152,3 +152,6 @@ The rule will only match if both conditions are true.
 
 ## Anatomy of a Yara Rule
 
+<p align="center">
+  <img src="https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/Yara/AnatomyOfYara.png">
+</p>
