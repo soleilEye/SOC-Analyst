@@ -32,6 +32,12 @@ Using a Yara rule is simple. Every **yara** command requires two arguments to be
 1) The rule file we create
 2) Name of file, directory, or process ID to use the rule for.
 
+## Anatomy of a Yara Rule
+
+<p align="center">
+  <img src="https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/Yara/AnatomyOfYara.png">
+</p>
+
 Every rule must have a name and condition.
 
 For example, if we wanted to use "myrule.yar" on directory "some directory", we would use the following command:
@@ -149,9 +155,3 @@ rule helloworld_checker{
 }
 ```
 The rule will only match if both conditions are true.
-
-## Anatomy of a Yara Rule
-
-<p align="center">
-  <img src="https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/Yara/AnatomyOfYara.png">
-</p>
