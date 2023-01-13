@@ -42,7 +42,7 @@ In simple terms, we will talk about which people, processes and technologies are
 We need highly trained personnel familiar with security alerts and attack scenarios. As attack types are constantly changing, we need a teammate that can easily adapt to new attack types and is willing to research.
 
 ### Processes
-To bring your SOC structure to good maturity, you need to align it with many different types of security requirements such as NIST, PCI, HIPAA. Processes require extreme standardization of actions to ensure nothing is skipped.
+To bring your SOC structure to good maturity, you need to equal it with many different types of security requirements such as NIST, PCI, HIPAA. Processes require extreme standardization of actions to ensure nothing is skipped.
 
 ### Technology
 You need to have various products for many topics such as penetration test, detection, prevention, analyze. You need to follow the market and technology closely to find the best solution for you. Sometimes the best product on the market may not be the best for you. This may be due to your low budget.
