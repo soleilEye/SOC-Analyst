@@ -155,3 +155,47 @@ rule helloworld_checker{
 }
 ```
 The rule will only match if both conditions are true.
+
+## Integrating With Other Libraries
+Frameworks such as the Cuckoo Sandbox or Python's PE Module allow you to improve the technicality of your Yara rules ten-fold.
+
+### Cuckoo
+**Cuckoo** Sandbox is an automated malware analysis environment. This module allows you to generate Yara rules based upon the behaviours discovered from Cuckoo Sandbox. As this environment executes malware, you can create rules on specific behaviours such as runtime strings and the like.
+
+### Python's PE
+**Python's PE** module allows you to create Yara rules from the various sections and elements of the Windows Portable Executable (PE) structure.
+
+This structure is the standard formatting of all executables and DLL files on windows. Including the programming libraries that are used. 
+
+Examining a PE file's contents is an essential technique in malware analysis; this is because behaviours such as cryptography or worming can be largely identified without reverse engineering or execution of the sample.
+
+## Other tools and Yara
+
+Knowing how to create custom Yara rules is useful, but luckily you don't have to create many rules from scratch to begin using Yara to search for evil. There are plenty of [GitHub resources](https://github.com/InQuest/awesome-yara) and open-source tools (along with commercial products) that can be utilized to leverage Yara in hunt operations and/or incident response engagements. 
+
+### LOKI
+
+LOKI is a free open-source IOC (Indicator of Compromise) scanner created/written by Florian Roth.
+
+Based on the [GitHub](https://github.com/Neo23x0/Loki) page, detection is based on 4 methods:
+
+1. File Name IOC Check
+2. Yara Rule Check (we are here)
+3. Hash Check
+4. C2 Back Connect Check
+
+There are additional checks that LOKI can be used for. For a full rundown, please reference the GitHub readme. LOKI can be used on both Windows and Linux systems and can be downloaded here.
+
+### THOR
+
+THOR Lite is Florian's newest multi-platform IOC AND YARA scanner. There are precompiled versions for Windows, Linux, and macOS. A nice feature with THOR Lite is its scan throttling to limit exhausting CPU resources. For more information and/or to download the binary, start [here](https://www.nextron-systems.com/thor-lite/). You need to subscribe to their mailing list to obtain a copy of the binary. Note that THOR is geared towards corporate customers. THOR Lite is the free version.
+
+### FENRIR 
+
+This is the 3rd tool created by Neo23x0 (Florian Roth). The updated version was created to address the issue from its predecessors, where requirements must be met for them to function. Fenrir is a bash script; it will run on any system capable of running bash (nowadays even Windows).
+
+### YAYA (Yet Another Yara Automaton)
+
+YAYA was created by the EFF (Electronic Frontier Foundation) and released in September 2020. Based on their website, "YAYA is a new open-source tool to help researchers manage multiple YARA rule repositories. YAYA starts by importing a set of high-quality YARA rules and then lets researchers add their own rules, disable specific rulesets, and run scans of files."
+
+Note: Currently, YAYA will only run on Linux systems. 
