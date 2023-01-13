@@ -42,3 +42,9 @@ If all is well, you should see the following output.
 Generally, you would examine the Yara rule and remove any strings that you feel might generate false positives. For this exercise, we will leave the generated Yara rule as is and test to see if Yara will flag file or no. 
 
 Note: Another tool created to assist with this is called yarAnalyzer (you guessed it - created by Florian Roth)
+
+## Further Reading on creating Yara rules and using yarGen:
+
+https://www.bsk-consulting.de/2015/02/16/write-simple-sound-yara-rules/
+https://www.bsk-consulting.de/2015/10/17/how-to-write-simple-but-sound-yara-rules-part-2/
+https://www.bsk-consulting.de/2016/04/15/how-to-write-simple-but-sound-yara-rules-part-3/
