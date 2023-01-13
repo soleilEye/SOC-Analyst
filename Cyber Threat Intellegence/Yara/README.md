@@ -1,3 +1,15 @@
+
+Content of this README
+|Topic        |
+|:-------------:|
+|[Indroduction](https://github.com/AM1RKA/SOC-Analyst/edit/main/Cyber%20Threat%20Intellegence/Yara/README.md#introduction)|
+|[What is Yara?](https://github.com/AM1RKA/SOC-Analyst/edit/main/Cyber%20Threat%20Intellegence/Yara/README.md#what-is-yara)|
+|[Malware and Strings](https://github.com/AM1RKA/SOC-Analyst/tree/main/Cyber%20Threat%20Intellegence/Yara#why-does-malware-use-strings)|
+|[First yara rule](https://github.com/AM1RKA/SOC-Analyst/edit/main/Cyber%20Threat%20Intellegence/Yara/README.md#your-first-yara-rule)|
+|[YARA conditions](https://github.com/AM1RKA/SOC-Analyst/tree/main/Cyber%20Threat%20Intellegence/Yara#yara-conditions-continued)|
+|[Other tools and Yara](https://github.com/AM1RKA/SOC-Analyst/tree/main/Cyber%20Threat%20Intellegence/Yara#other-tools-and-yara)|
+
+
 ## Introduction
 
 Yara (Yet Another Ridiculous Acronym) is and its importance in infosec today. Yara was developed by Victor M. Alvarez (@plusvic) and @VirusTotal. Check the GitHub repo [here](https://github.com/virustotal/yara).
