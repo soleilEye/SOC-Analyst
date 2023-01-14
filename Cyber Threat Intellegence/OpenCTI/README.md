@@ -4,14 +4,14 @@ Cyber Threat Intelligence is typically a managerial mystery to handle, with orga
 [OpenCTI](https://github.com/OpenCTI-Platform) is another open-sourced platform designed to provide organisations with the means to manage CTI through the storage, analysis, visualisation and presentation of threat campaigns, malware and IOCs.
 
 <p align="center">
-  <img src="https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/OpenCTI/logoOpenCTI.png">
+  <img src="https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/OpenCTI/Images/logoOpenCTI.png">
 </p>
 
 ### Objective
 Developed by the collaboration of the [French National cybersecurity agency (ANSSI)](https://www.ssi.gouv.fr/), the platform's main objective is to create a comprehensive(всесторонний) tool that allows users to capitalise on technical and non-technical information while developing relationships between each piece of information and its primary source. The platform can use the [MITRE ATT&CK framework](https://attack.mitre.org/) to structure the data. Additionally, it can be integrated with other threat intel tools such as MISP and TheHive.
 
 <p align="center">
-  <img src=https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/OpenCTI/DashboardOpenCTI.png>
+  <img src=https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/OpenCTI/Images/DashboardOpenCTI.png>
 </p>
 
 ### OpenCTI Data Model
@@ -20,7 +20,7 @@ OpenCTI uses a variety of knowledge schemas in structuring data, the main one be
 This data model is supported by how the platform's architecture has been laid out. The image below gives an architectural structure for your know-how.
 
 <p align="center">
-  <img src=https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/OpenCTI/OpenCTIModel.png>
+  <img src=https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/OpenCTI/Images/OpenCTIModel.png>
 </p>
 
 The highlight services include:
