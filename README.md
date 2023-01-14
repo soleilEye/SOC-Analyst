@@ -75,7 +75,7 @@ There are many various techniques of attack vectors and malicious software and t
 
 ### General Routine
 
-Throughout the day a SOC analyst will generally examine alerts on the SIEM and determine which ones are real threats. To reach a conclusion he/she will utilize various security products such as EDR (Endpoint Detection and Response), Log Management and SOAR. We will explain in detail why and how these products are used later in the training program.
+Throughout the day a SOC analyst will generally examine alerts on the SIEM and determine which ones are real threats. To reach a conclusion he/she will utilize various security products such as EDR (Endpoint Detection and Response), Log Management and SOAR. We will explain in detail why and how these products are used later.
 
 To be a successful SOC analyst who is not dependent on security products and can correctly analyze SIEM alerts one needs to have the following competencies.
 
@@ -94,5 +94,3 @@ As a more complicated step we might have to detect a potential data leak on the 
 You will come across some kind of malicious software when dealing with most threats. In order to be able to understand what the actual purpose of these malwares are (they sometimes display different behaviors to mislead analysts) you need to have some skills in malware analysis.
 
 It is important to at least determine what the malicious file’s command and control center is and whether or not there is a device communicating with this address.
-
-We have generally discussed what a SOC analyst is, what he/she does and what kind of skills he/she needs to have. As we continue with the program we will address technical areas, we will start with the SIEM.
