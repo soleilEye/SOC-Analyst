@@ -12,6 +12,8 @@ Security information and event management (SIEM), is a security solution that pr
 
 Example of an alert: If someone on a Windows operating system attempts to enter 20 incorrect passwords in 10 seconds, this is suspicious activity, it is not likely that someone who forgot their password would try to re-enter their password so many times in such a short period. This is why we create a SIEM rule/filter, to determine such activities that exceed the threshold values. Due to this SIEM rule an alert will be created if such a situation occurs.
 
+Some popular SIEM solutions: IBM QRadar, ArcSight ESM, FortiSIEM, Splunk etc. 
+
 ## Network Visibility through SIEM
 
 Before explaining the importance of SIEM, let's first understand why it is critical to have better visibility of all the activities within a network. The image below shows an example of a simple network that comprises multiple Linux/Windows based Endpoints, one data server, and one website. Each component communicates with the other or accesses the internet through a router.
@@ -53,3 +55,11 @@ Now that we have covered various types of logs, it's time to understand the impo
 <p align="center">
   <img src=https://github.com/AM1RKA/SOC-Analyst/blob/main/Security%20Information%20and%20Event%20Management/Images/SIEM.png>
 </p>
+
+## Relationship Between a SOC Analyst and SIEM
+
+Although SIEM solutions have many features, as SOC analysts we generally only follow alerts. There are other groups/people who develop configurations and rule correlations.
+
+As we mentioned above, alerts are created by data that is passed through filters. The alerts are primarily analyzed by a SOC analyst. This is exactly where a SOC analyst’s duty in the security operations center begins. Fundamentally, he/she must decide whether this created alert is a real threat or a false alarm.
+
+. As a SOC analyst we should analyze the details related to these alerts with the help of other SOC products (such as EDR, Log Management, Threat Intelligence Feed, etc.) and lastly we should determine whether or not they are real threats.
