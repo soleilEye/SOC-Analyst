@@ -40,7 +40,7 @@ Network-related logs are generated when the hosts communicate with each other or
 * A user accessing company's resources through VPN.
 * Network file sharing Activity
 
-## Importance of SIEMShows SIEM functionalities
+## Importance of SIEM
 Now that we have covered various types of logs, it's time to understand the importance of SIEM. As all these devices generate hundreds of events per second, examining the logs on each device one by one in case of any incident can be a tedious task. That is one of the advantages of having a SIEM solution in place. It not only takes logs from various sources in real-time but also provides the ability to correlate between events, search through the logs, investigate incidents and respond promptly. Some key features provided by SIEM are:
 
 * Real-time log Ingestion
