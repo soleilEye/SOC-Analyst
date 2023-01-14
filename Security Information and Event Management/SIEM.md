@@ -4,11 +4,13 @@ This will be generally about what SIEM is, why it is utilized within a SOC and t
 
 ## What is SIEM?
 
-Security information and event management (SIEM), is a security solution that provides the real time logging of events in an environment. The actual purpose for event logging is to detect security threats. It is a tool that collects data from various endpoints/network devices across the network, stores them at a centralized place, and performs correlation on them. The ones that interest us most as SOC analysts are: they filter the data that they collect and create alerts for any suspicious events.
+Security information and event management (SIEM), is a security solution that provides the real time logging of events in an environment. The actual purpose for event logging is to detect security threats. It is a tool that collects data from various endpoints/network devices across the network, stores them at a centralized place, and performs correlation on them. The ones that interest us most as SOC analysts are: they filter the data that they collect.
 
 <p align="center">
   <img src=https://github.com/AM1RKA/SOC-Analyst/blob/main/Security%20Information%20and%20Event%20Management/Images/siem%20alert.png>
 </p>
+
+SIEM is used to provide correlation on the collected data to detect threats. Once a threat is detected, or a certain threshold is crossed, an alert is raised. This alert enables the analysts to take suitable actions based on the investigation. SIEM plays an important role in the Cyber Security domain and helps detect and protect against the latest threats in a timely manner. It provides good visibility of what's happening within the network infrastructure.
 
 Example of an alert: If someone on a Windows operating system attempts to enter 20 incorrect passwords in 10 seconds, this is suspicious activity, it is not likely that someone who forgot their password would try to re-enter their password so many times in such a short period. This is why we create a SIEM rule/filter, to determine such activities that exceed the threshold values. Due to this SIEM rule an alert will be created if such a situation occurs.
 
@@ -62,4 +64,4 @@ Although SIEM solutions have many features, as SOC analysts we generally only fo
 
 As we mentioned above, alerts are created by data that is passed through filters. The alerts are primarily analyzed by a SOC analyst. This is exactly where a SOC analyst’s duty in the security operations center begins. Fundamentally, he/she must decide whether this created alert is a real threat or a false alarm.
 
-. As a SOC analyst we should analyze the details related to these alerts with the help of other SOC products (such as EDR, Log Management, Threat Intelligence Feed, etc.) and lastly we should determine whether or not they are real threats.
+As a SOC analyst we should analyze the details related to these alerts with the help of other SOC products (such as EDR, Log Management, Threat Intelligence Feed, etc.) and lastly we should determine whether or not they are real threats.
