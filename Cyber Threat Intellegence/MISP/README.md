@@ -80,7 +80,9 @@ Additionally, MISP provides a means to add a sharing group, where an analyst can
 
 Event details can also be populated by filling out predefined fields on a defined template, including adding attributes to the event. We can use the email details of the CobaltStrike investigation to populate details of our event. We will be using the **Phishing E-mail** category from the templates.
 
-  
+<p align="center">
+  <img src=https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/MISP/AddingEvent-min.gif>
+</p>
 
 ## Attributes & Attachments
 
@@ -96,9 +98,14 @@ In our example below, we add an Emotet Epoch 4 C2 IP address associated with the
 
 The analyst can also add file attachments to the event. These may include malware, report files from external analysis or simply artefacts dropped by the malware. We have added the Cobalt Strike EXE binary file to our event in our example. You also have to check the Malware checkbox to mark the file as malware. This will ensure that it is zipped and passworded to protect users from accidentally downloading and executing the file.
 
-
+<p align="center">
+  <img src=https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/MISP/Attachement-min.gif>
+</p>
 
 ## Publish Event
 
 Once the analysts have created events, the **organisation admin** will review and publish those events to add them to the pool of events. This will also share the events to the distribution channels set during the creation of the events.
 
+<p align="center">
+  <img src=https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/MISP/AddingEvent-min.gif>
+</p> 
