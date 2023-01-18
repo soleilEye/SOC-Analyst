@@ -109,3 +109,64 @@ Once the analysts have created events, the **organisation admin** will review an
 <p align="center">
   <img src=https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/MISP/AddingEvent-min.gif>
 </p> 
+
+## Feeds
+Feeds are resources that contain indicators that can be imported into MISP and provide attributed information about security events. These feeds provide analysts and organisations with continuously updated information on threats and adversaries and aid in their proactive defence against attacks.
+
+MISP Feeds provide a way to:
+
+* Exchange threat information.
+* Preview events along with associated attributes and objects.
+* Select and import events to your instance.
+* Correlate attributes identified between events and feeds.
+<p align="center">
+  <img src=https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/MISP/Feeds.gif>
+</p> 
+Feeds are enabled and managed by the **Site Admin** for the analysts to obtain information on events and indicators. 
+
+## Taxonomies
+A taxonomy is a means of classifying information based on standard features or attributes. On MISP, taxonomies are used to categorise events, indicators and threat actors based on tags that identify them.
+<p align="center">
+  <img src=https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/MISP/taxonomy-explanation.png>
+</p> 
+
+Analysts can use taxonomies to:
+
+* Set events for further processing by external tools such as VirusTotal.
+* Ensure events are classified appropriately before the Organisation Admin publishes them.
+* Enrich intrusion detection systems' export values with tags that fit specific deployments.
+
+Taxonomies are expressed in machine tags, which comprise three vital parts:
+
+* **Namespace:** Defines the tag's property to be used.
+* **Predicate:** Specifies the property attached to the data.
+* **Value:** Numerical or text details to map the property.
+
+Taxonomies are listed under the Event Actions tab. The site admin can enable relevant taxonomies.
+<p align="center">
+  <img src=https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/MISP/taxonomies.gif>
+</p> 
+
+## Tagging
+Information from feeds and taxonomies, tags can be placed on events and attributes to identify them based on the indicators or threats identified correctly. Tagging allows for effective sharing of threat information between users, communities and other organisations using MISP to identify various threats.
+
+In our CobaltStrike event example, we can add tags by clicking on the buttons in the **Tags** section and searching from the available options appropriate to the case. The buttons represent global tags and local tags, respectively. It is also important to note that you can add your unique tags to your MISP instance as an analyst or organisation that would allow you to ingest, navigate through and share information quickly within the organisation.
+
+<p align="center">
+  <img src=https://github.com/AM1RKA/SOC-Analyst/blob/main/Cyber%20Threat%20Intellegence/MISP/tagging.gif>
+</p> 
+
+## Tagging Best Practices
+
+### Tagging at Event level vs Attribute Level
+
+Tags can be added to an event and attributes. Tags are also inheritable when set. It is recommended to set tags on the entire event and only include tags on attributes when they are an exception from what the event indicates. This will provide a more fine-grained analysis.
+
+### The minimal subset of Tags
+
+The following tags can be considered a must-have to provide a well-defined event for distribution:
+
+* [**Traffic Light Protocol:**](https://www.first.org/tlp/) Provides a colour schema to guide how intelligence can be shared.
+* **Confidence:** Provides an indication as to whether or not the data being shared is of high quality and has been vetted so that it can be trusted to be good for immediate usage.
+* **Origin:** Describes the source of information and whether it was from automation or manual investigation.
+* **Permissible Actions Protocol:** An advanced classification that indicates how the data can be used to search for compromises within the organisation.
