@@ -172,7 +172,7 @@ The following tags can be considered a must-have to provide a well-defined event
 * **Permissible Actions Protocol:** An advanced classification that indicates how the data can be used to search for compromises within the organisation.
 
 # Additional Resources
-There is plenty of information and capabilities that were not covered in this room. This leaves plenty of room for research and learning more about MISP.  To guide you towards that, look at the following attached links and feel free to come back to the room to practice.
+There is plenty of information and capabilities that were not covered in this readme. This leaves plenty of readme for research and learning more about MISP.  To guide you towards that, look at the following attached links and feel free to come back to practice.
 * [MISP Book](https://www.circl.lu/doc/misp/)
 * [MISP GitHub](https://github.com/MISP/)
 * [CIRCL MISP Training Module 1](https://www.youtube.com/watch?v=aM7czPsQyaI)
