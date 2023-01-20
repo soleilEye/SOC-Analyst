@@ -82,7 +82,7 @@ Sniffer mode parameters are explained in the table below;
 
 Start the Snort instance in verbose mode `-v` and use the interface `-i "eth0"`; 
 ```shell 
-sudo snort -v-i eth0
+sudo snort -v -i eth0
 ```
 
 In case you have only one interface, Snort uses it by default. The above example demonstrates to sniff on the interface named "eth0". Once you simulate the parameter -v, you will notice it will automatically use the "eth0" interface and prompt it.
