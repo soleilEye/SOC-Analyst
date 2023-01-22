@@ -142,8 +142,13 @@ Snort needs superuser (root) rights to sniff the traffic, so once you run the sn
 ## Logging with parameter "-l"
 
 First, start the Snort instance in packet logger mode; `sudo snort -dev -l`.
+
 Now start ICMP/HTTP traffic with the traffic-generator script.
+
 Once the traffic is generated, Snort will start showing the packets and log them in the target directory. You can configure the default output directory in snort.config file. However, you can use the `-l` parameter to set a target directory. Identifying the default log directory is useful for continuous monitoring operations, and the `-l` parameter is much more useful for testing purposes.
+
 The `-l`. part of the command creates the logs in the current directory. You will need to use this option to have the logs for each exercise in their folder.
+
 Now, let's check the generated log file.
+
 As you can see, it is a single all-in-one log file. It is a binary/tcpdump format log.
