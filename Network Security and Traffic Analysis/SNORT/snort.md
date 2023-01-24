@@ -185,7 +185,7 @@ Opening log file with tcpdump.
 Opening log file with Wireshark.
 ![a4bd8447760481cd2f6f9762a9620a50](https://user-images.githubusercontent.com/80647611/214261825-b5ac4870-1d4a-453f-9e7a-99caff72cc0c.png)
 
-**`-r` parameter also allows users to filter the binary log files. You can filter the processed log to see specific packets with the `-r` parameter and Berkeley Packet Filters (BPF). **
+** `-r` parameter also allows users to filter the binary log files. You can filter the processed log to see specific packets with the `-r` parameter and Berkeley Packet Filters (BPF).**
 
 * **sudo snort -r logname.log -X**
 * **sudo snort -r logname.log icmp**
