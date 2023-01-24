@@ -141,7 +141,10 @@ Snort needs superuser (root) rights to sniff the traffic, so once you run the sn
 
 ## Logging with parameter "-l"
 
-First, start the Snort instance in packet logger mode; `sudo snort -dev -l`.
+First, start the Snort instance in packet logger mode; 
+```shell
+sudo snort -dev -l .
+```
 
 Now start ICMP/HTTP traffic with the traffic-generator script.
 
@@ -152,3 +155,48 @@ The `-l`. part of the command creates the logs in the current directory. You wil
 Now, let's check the generated log file.
 
 As you can see, it is a single all-in-one log file. It is a binary/tcpdump format log.
+
+## Logging with parameter "-K ASCII"
+
+Start the Snort instance in packet logger mode; 
+```shell 
+sudo snort -dev -K ASCII -l .
+```
+Now run the traffic-generator script as sudo and start ICMP/HTTP traffic. Once the traffic is generated, Snort will start showing the  packets in verbosity mode as follows;
+
+The logs created with "-K ASCII" parameter is entirely different. 
+Once we look closer at the created folders, we can see that the logs are in ASCII and categorised format, so it is possible to read them without using a Snort instance.
+![Screenshot 2023-01-24 125156](https://user-images.githubusercontent.com/80647611/214260975-ad159953-8db4-4975-8157-8fe16e33f332.jpg)
+
+In a nutshell, ASCII mode provides multiple files in human-readable format, so it is possible to read the logs easily by using a text editor. By contrast with ASCII format, binary format is not human-readable and requires analysis using Snort or an application like tcpdump.
+
+Let's compare the ASCII format with the binary format by opening both of them in a text editor. The difference between the binary log file and the ASCII log file is shown below. (Left side: binary format. Right side: ASCII format).![5e8487745a7ee4d3d33e67c2967ebaba](https://user-images.githubusercontent.com/80647611/214259951-1666eaa6-df8f-4d73-b39b-23409a4bf486.png)
+
+## Reading generated logs with parameter "-r"
+Start the Snort instance in packet reader mode; 
+```shell 
+sudo snort -r
+```
+**Note that** Snort can read and handle the binary like output (tcpdump and Wireshark also can handle this log format). However, if you create logs with "-K ASCII" parameter, Snort will not read them. As you can see in the above output, Snort read and displayed the log file just like in the sniffer mode.
+
+Opening log file with tcpdump.
+![Screenshot 2023-01-24 125542](https://user-images.githubusercontent.com/80647611/214261763-68bd1c51-0787-4ba8-99c3-e07dd02f5095.jpg)
+
+Opening log file with Wireshark.
+![a4bd8447760481cd2f6f9762a9620a50](https://user-images.githubusercontent.com/80647611/214261825-b5ac4870-1d4a-453f-9e7a-99caff72cc0c.png)
+
+**`-r` parameter also allows users to filter the binary log files. You can filter the processed log to see specific packets with the `-r` parameter and Berkeley Packet Filters (BPF). **
+
+* **sudo snort -r logname.log -X**
+* **sudo snort -r logname.log icmp**
+* **sudo snort -r logname.log tcp**
+* **sudo snort -r logname.log 'udp and port 53'**
+
+The output will be the same as the above, but only packets with the chosen protocol will be shown. Additionally, you can specify the number of processes with the parameter `-n`. The following command will process only **the first 10 packets**:
+```shell
+snort -dvr logname.log -n 10
+```
+Please use the following resources to understand how the BPF works and its use.
+* https://en.wikipedia.org/wiki/Berkeley_Packet_Filter
+* https://biot.com/capstats/bpf.html
+* https://www.tcpdump.org/manpages/tcpdump.1.html
