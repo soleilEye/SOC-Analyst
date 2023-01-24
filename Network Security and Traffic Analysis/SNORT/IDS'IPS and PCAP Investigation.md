@@ -66,3 +66,80 @@ If you want to stop the daemon, you can easily use the "kill" command to stop th
 sudo kill -9 PID
 ```
 **Note that** daemon mode is mainly used to automate the Snort. This parameter is mainly used in scripts to start the Snort service in the background. It is not recommended to use this mode unless you have a working knowledge of Snort and stable configuration.
+
+## IDS/IPS mode with parameter "-A"
+
+Remember that there are several alert modes available in snort;
+
+**console:** Provides fast style alerts on the console screen.
+**cmg:** Provides basic header details with payload in hex and text format.
+**full:** Full alert mode, providing all possible information about the alert.
+**fast:** Fast mode, shows the alert message, timestamp, source and destination ip along with port numbers.
+**none:** Disabling alerting.
+
+In this section, only the **console** and **cmg** parameters provide alert information in the console. It is impossible to identify the difference between the rest of the alert modes via terminal. Differences can be identified by looking at generated logs. 
+
+At the end of this section, we will compare the **full**, **fast** and **none** modes. Remember that these parameters don't provide console output, so we will continue to identify the differences through log formats.
+
+## IDS/IPS mode with parameter "-A console"
+
+Console mode provides fast style alerts on the console screen. Start the Snort instance in **console alert mode `-A console` with the following command**
+```shell 
+sudo snort -c /etc/snort/snort.conf -A console
+```
+Now run the traffic-generator script as sudo and start ICMP/HTTP traffic. Once the traffic is generated, snort will start generating alerts according to provided ruleset defined in the configuration file. 
+
+![Screenshot 2023-01-24 172052](https://user-images.githubusercontent.com/80647611/214319109-e5375d1d-8f70-4c83-ac66-c66577faed9c.jpg)
+
+## IDS/IPS mode with parameter "-A cmg"
+
+Cmg mode provides basic header details with payload in hex and text format. Start the Snort instance in cmg alert mode `-A cmg` with the following command 
+```shell 
+sudo snort -c /etc/snort/snort.conf -A cmg
+```
+Now run the traffic-generator script as sudo and start ICMP/HTTP traffic. Once the traffic is generated, snort will start generating alerts according to provided ruleset defined in the configuration file. 
+![Screenshot 2023-01-24 172241](https://user-images.githubusercontent.com/80647611/214319545-d9edfa5c-f400-42e4-b9ef-42c8af859f08.jpg)
+
+**Let's compare the console and cmg outputs** before moving on to other alarm types. As you can see in the given outputs above, console mode provides basic header and rule information. **Cmg mode** provides full packet details along with rule information. 
+
+## IDS/IPS mode with parameter "-A fast"
+
+Fast mode provides alert messages, timestamps, and source and destination IP addresses. **Remember, there is no console output in this mode.** Start the Snort instance in fast alert mode `-A fast` with the following command 
+```shell 
+sudo snort -c /etc/snort/snort.conf -A fast
+```
+Now run the traffic-generator script as sudo and start ICMP/HTTP traffic. Once the traffic is generated, snort will start generating alerts according to provided ruleset defined in the configuration file. 
+
+Let's check the alarm file;
+![c66d9e4fb20937682ee367346a1d0f4b](https://user-images.githubusercontent.com/80647611/214320743-3b71a947-6e8b-4a21-b12b-8f03e517ce7b.png)
+As you can see in the given picture above, fast style alerts contain summary information on the action like direction and alert header.
+
+## IDS/IPS mode with parameter "-A full"
+
+Full alert mode provides all possible information about the alert. **Remember, there is no console output in this mode.** Start the Snort instance in full alert mode `-A full` with the following command 
+```shell 
+sudo snort -c /etc/snort/snort.conf -A full
+```
+Now run the traffic-generator script as sudo and start ICMP/HTTP traffic. Once the traffic is generated, snort will start generating alerts according to provided ruleset defined in the configuration file. 
+Let's check the alarm file;
+![cba862ab1b89fe31fe0ac1c356fde8fa](https://user-images.githubusercontent.com/80647611/214321300-52566a13-7dd0-4a8c-9129-6e76fb988ec7.png)
+As you can see in the given picture above, full style alerts contain all possible information on the action.
+
+## IDS/IPS mode with parameter "-A none"
+
+Disable alerting. This mode doesn't create the alert file. However, it still logs the traffic and creates a log file in binary dump format. **Remember, there is no console output in this mode.** Start the Snort instance in none alert mode `-A none` with the following command 
+```shell 
+sudo snort -c /etc/snort/snort.conf -A none
+```
+Now run the traffic-generator script as sudo and start ICMP/HTTP traffic. Once the traffic is generated, snort will start generating alerts according to provided ruleset defined in the configuration file. 
+
+## IDS/IPS mode: "Using rule file without configuration file"
+It is possible to run the Snort only with rules without a configuration file. Running the Snort in this mode will help you test the user-created rules. However, this mode will provide less performance.
+
+## IPS mode and dropping packets
+Snort IPS mode activated with **-Q --daq afpacket** parameters. You can also activate this mode by editing snort.conf file. However, you don't need to edit snort.conf file in the scope of this room. Review the bonus task or snort manual for further information on daq and advanced configuration settings: `-Q --daq afpacket`
+
+Activate the Data Acquisition (DAQ) modules and use the afpacket module to use snort as an IPS: `-i eth0:eth1`
+Identifying interfaces note that Snort IPS require at least two interfaces to work. Now run the traffic-generator script as sudo and start ICMP/HTTP traffic.
+
+As you can see in the picture above, Snort blocked the packets this time. **We used the same rule with a different action (drop/reject).** Remember, for the scope of this task; our point is the operating mode, not the rule.
