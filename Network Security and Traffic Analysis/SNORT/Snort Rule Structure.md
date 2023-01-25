@@ -85,7 +85,7 @@ Remember, once you create a rule, it is a local rule and should be in your "loca
 That is your "local.rules" file.
 ![image](https://user-images.githubusercontent.com/80647611/214551666-276182be-c41a-4286-bf34-3f26f110a84b.png)
 
-Note that there are some default rules activated with snort instance. These rules are deactivated to manage your rules and improve your exercise experience. For further information, please refer to the TASK-10 or [Snort manual](http://manual-snort-org.s3-website-us-east-1.amazonaws.com/).
+Note that there are some default rules activated with snort instance. These rules are deactivated to manage your rules and improve your exercise experience. For further information, please refer to [Snort manual](http://manual-snort-org.s3-website-us-east-1.amazonaws.com/).
 
 By this point, we covered the primary structure of the Snort rules. Understanding and practicing the fundamentals is suggested before creating advanced rules and using additional options.
 
