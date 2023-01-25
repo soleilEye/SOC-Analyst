@@ -98,6 +98,7 @@ Cmg mode provides basic header details with payload in hex and text format. Star
 sudo snort -c /etc/snort/snort.conf -A cmg
 ```
 Now run the traffic-generator script as sudo and start ICMP/HTTP traffic. Once the traffic is generated, snort will start generating alerts according to provided ruleset defined in the configuration file. 
+
 ![Screenshot 2023-01-24 172241](https://user-images.githubusercontent.com/80647611/214319545-d9edfa5c-f400-42e4-b9ef-42c8af859f08.jpg)
 
 **Let's compare the console and cmg outputs** before moving on to other alarm types. As you can see in the given outputs above, console mode provides basic header and rule information. **Cmg mode** provides full packet details along with rule information. 
@@ -112,6 +113,7 @@ Now run the traffic-generator script as sudo and start ICMP/HTTP traffic. Once t
 
 Let's check the alarm file;
 ![c66d9e4fb20937682ee367346a1d0f4b](https://user-images.githubusercontent.com/80647611/214320743-3b71a947-6e8b-4a21-b12b-8f03e517ce7b.png)
+
 As you can see in the given picture above, fast style alerts contain summary information on the action like direction and alert header.
 
 ## IDS/IPS mode with parameter "-A full"
@@ -123,6 +125,7 @@ sudo snort -c /etc/snort/snort.conf -A full
 Now run the traffic-generator script as sudo and start ICMP/HTTP traffic. Once the traffic is generated, snort will start generating alerts according to provided ruleset defined in the configuration file. 
 Let's check the alarm file;
 ![cba862ab1b89fe31fe0ac1c356fde8fa](https://user-images.githubusercontent.com/80647611/214321300-52566a13-7dd0-4a8c-9129-6e76fb988ec7.png)
+
 As you can see in the given picture above, full style alerts contain all possible information on the action.
 
 ## IDS/IPS mode with parameter "-A none"
@@ -143,3 +146,53 @@ Activate the Data Acquisition (DAQ) modules and use the afpacket module to use s
 Identifying interfaces note that Snort IPS require at least two interfaces to work. Now run the traffic-generator script as sudo and start ICMP/HTTP traffic.
 
 As you can see in the picture above, Snort blocked the packets this time. **We used the same rule with a different action (drop/reject).** Remember, for the scope of this task; our point is the operating mode, not the rule.
+
+# Operation Mode 4: PCAP Investigation
+![cd4c3186f99950f6896a9c00007d0001](https://user-images.githubusercontent.com/80647611/214532667-07fe102f-f39b-4996-888e-3a573625af60.png)
+
+## Let's investigate PCAPs with Snort
+
+Capabilities of Snort are not limited to sniffing, logging and detecting/preventing the threats. PCAP read/investigate mode helps you work with pcap files. Once you have a pcap file and process it with Snort, you will receive default traffic statistics with alerts depending on your ruleset.
+
+Reading a pcap without using any additional parameters we discussed before will only overview the packets and provide statistics about the file. In most cases, this is not very handy. We are investigating the pcap with Snort to benefit from the rules and speed up our investigation process by using the known patterns of threats. 
+
+Note that we are pretty close to starting to create rules. Therefore, you need to grasp the working mechanism of the Snort, learn the discussed parameters and begin combining the parameters for different purposes.
+
+PCAP mode parameters are explained in the table below;
+| Parameter	 | Description |
+| ----- | -------- |
+| -r / --pcap-single= | Read a single pcap |
+| --pcap-list=""| Read pcaps provided in command (space separated). |
+| --pcap-show | Show pcap name on console during processing.|
+
+## Investigating single PCAP with parameter "-r"
+
+For test purposes, you can still test the default reading option with pcap by using the following command 
+```shell 
+snort -r icmp-test.pcap
+```
+Let's investigate the pcap with our configuration file and see what will happen. 
+```shell 
+sudo snort -c /etc/snort/snort.conf -q -r icmp-test.pcap -A console -n 10
+```
+![image](https://user-images.githubusercontent.com/80647611/214533752-d57c4bfd-8f2a-48aa-a720-42dba374e814.png)
+
+Our ICMP rule got a hit! As you can see in the given output, snort identified the traffic and prompted the alerts according to our ruleset.
+
+## Investigating multiple PCAPs with parameter "--pcap-list"
+
+Let's investigate multiple pcaps with our configuration file and see what will happen. 
+```shell 
+sudo snort -c /etc/snort/snort.conf -q --pcap-list="icmp-test.pcap http2.pcap" -A console -n 10
+```
+Our ICMP rule got a hit! As you can see in the given output, snort identified the traffic and prompted the alerts according to our ruleset.
+
+**Here is one point to notice:** we've processed two pcaps, and there are lots of alerts, so it is impossible to match the alerts with provided pcaps without snort's help. We need to separate the pcap process to identify the source of the alerts.
+
+## Investigating multiple PCAPs with parameter "--pcap-show"
+Let's investigate multiple pcaps, distinguish each one, and see what will happen. 
+```shell 
+sudo snort -c /etc/snort/snort.conf -q --pcap-list="icmp-test.pcap http2.pcap" -A console --pcap-show
+```
+![image](https://user-images.githubusercontent.com/80647611/214535806-c46f7c33-0f2f-43a8-b619-10e91b0c5132.png)
+Our ICMP rule got a hit! As you can see in the given output, snort identified the traffic, distinguished each pcap file and prompted the alerts according to our ruleset.
