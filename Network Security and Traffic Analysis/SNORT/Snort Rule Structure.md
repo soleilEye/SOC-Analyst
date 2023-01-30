@@ -94,7 +94,7 @@ Wow! We have covered the fundamentals of the Snort rules!
 
 ### Such example rules:
 
-alert tcp any any  <> any any (msg: "SUCCESS FTP LOGIN"; content:"230 User"; reference: TASK; sid:100001; rev:1;) - successful FTP login attempt prompts
-alert tcp any any  <> any any (msg: "FAILED FTP LOGIN"; content:"530 User"; reference: TASK; sid:100001; rev:1;) - failed FTP login attempt prompts
-alert tcp any any  <> any any (msg: "FTP LOGIN"; content:"331 Password"; reference: TASK; sid:100001; rev:1;) - failed FTP login attempts with a valid username but a bad password or no password.
-alert tcp any any  <> any any (msg: "FAILED FTP LOGIN"; content:"331 Password"; content: "Administrator"; reference: TASK; sid:100001; rev:1;) - failed FTP login attempts with "Administrator" username but a bad password or no password.
+* alert tcp any any  <> any any (msg: "SUCCESS FTP LOGIN"; content:"230 User"; reference: TASK; sid:100001; rev:1;) - successful FTP login attempt prompts
+* alert tcp any any  <> any any (msg: "FAILED FTP LOGIN"; content:"530 User"; reference: TASK; sid:100001; rev:1;) - failed FTP login attempt prompts
+* alert tcp any any  <> any any (msg: "FTP LOGIN"; content:"331 Password"; reference: TASK; sid:100001; rev:1;) - failed FTP login attempts with a valid username but a bad password or no password.
+* alert tcp any any  <> any any (msg: "FAILED FTP LOGIN"; content:"331 Password"; content: "Administrator"; reference: TASK; sid:100001; rev:1;) - failed FTP login attempts with "Administrator" username but a bad password or no password.
