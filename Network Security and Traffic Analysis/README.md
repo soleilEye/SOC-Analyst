@@ -89,6 +89,4 @@ There are three main data types investigated in Network Forensics
 * **Traffic Captures (full packet captures and network flows)**
 * **Log Files**
 
-NetworkMiner is capable of processing and handling packet pictures and live traffic. Therefore, we will focus on live and captured traffic in this room. Both of these data sources are valuable for forensics investigations. 
-
 Traffic investigation actions fall under network forensics's "Traffic Analysis" subdomain. However, the main purpose of the NetworkMiner is to investigate the overall flow/condition of the limited amount of traffic, not for a long in-depth live traffic investigation.
