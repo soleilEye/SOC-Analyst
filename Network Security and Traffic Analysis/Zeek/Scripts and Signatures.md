@@ -81,3 +81,36 @@ We mentioned that Zeek has base scripts located in "/opt/zeek/share/zeek/base". 
 ```shell
 zeek -C -r ftp.pcap local 
 ```
+
+# Scripts 203 | Load Frameworks
+
+Zeek has 15+ frameworks that help analysts to discover the different events of interest. In this task, we will cover the common frameworks and functions. You can find and read more on the prebuilt scripts and frameworks by visiting Zeek's online book here.
+
+### File Framework | Hashes
+
+Not all framework functionalities are intended to be used in CLI mode. The majority of them are used in scripting. You can easily see the usage of frameworks in scripts by calling a specific framework as `load @ $PATH/base/frameworks/framework-name`. Now, let's use a prebuilt function of the file framework and have MD5, SHA1 and SHA256 hashes of the detected files. We will call the "File Analysis" framework's "hash-all-files" script to accomplish this. Before loading the scripts, let's look at how it works.
+
+![image](https://user-images.githubusercontent.com/80647611/218695370-1aa6baf5-8605-46ad-8538-a7c0f398184c.png)
+
+### Notice Framework | Intelligence
+
+The intelligence framework can work with data feeds to process and correlate events and identify anomalies. The intelligence framework requires a feed to match and create alerts from the network traffic. Let's demonstrate a single user-generated threat intel file and let Zeek use it as the primary intelligence source. 
+
+Intelligence source location: `/opt/zeek/intel/zeek_intel.txt`
+
+There are two critical points you should never forget. First, the source file has to be tab-delimited. Second, you can manually update the source and adding extra lines doesn't require any re-deployment. However, if you delete a line from the file, you will need to re-deploy the Zeek instance. 
+
+Let's add the suspicious URL gathered from the case1.pcap file as a source intel and see this feature in action! Before executing the script, let's look at the intelligence file and the script contents.
+
+# Scripts 204 | Package Manager
+
+Zeek Package Manager helps users install third-party scripts and plugins to extend Zeek functionalities with ease. The package manager is installed with Zeek and available with the `zkg` command. Users can install, load, remove, update and create packages with the "zkg" tool. You can read more on and view available packages [here](https://packages.zeek.org/) and [here](https://github.com/zeek/packages). Please note that you need root privileges to use the "zkg" tool.
+
+| Command | Description |
+| -------- | :--------: |
+zkg install package_path | Install a package. Example (zkg install zeek/j-gras/zeek-af_packet-plugin). |
+zkg install git_url | Install package. Example (zkg install https://github.com/corelight/ztest). |
+zkg list | List installed package. |
+zkg remove | Remove installed package. |
+zkg refresh | Check version updates for installed packages. |
+zkg upgrade | Update installed packages. |
