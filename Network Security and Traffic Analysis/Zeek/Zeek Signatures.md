@@ -36,5 +36,44 @@ signature http-password {
 # ip-proto: Filtering TCP connection.
 # dst-port: Filtering destination port 80.
 # payload: Filtering the "password" phrase.
-# event: Signature match message.```
+# event: Signature match message.
+```
+Remember, Zeek signatures support regex. Regex ".*" matches any character zero or more times. The rule will match when a "password" phrase is detected in the packet payload. Once the match occurs, Zeek will generate an alert and create additional log files (signatures.log and notice.log).
 
+## Example | FTP Brute-force
+
+Let's create another rule to filter FTP traffic. This time, we will use the FTP content filter to investigate command-line inputs of the FTP traffic. The aim is to detect FTP "admin" login attempts. This basic signature will help us identify the admin login attempts and have an idea of possible admin account abuse or compromise events.
+```shell
+signature ftp-admin {
+     ip-proto == tcp
+     ftp /.*USER.*dmin.*/
+     event "FTP Admin Login Attempt!"
+}
+```
+
+### Let's optimise our rule and make it detect all possible FTP brute-force attempts.
+
+This signature will create logs for each event containing "FTP 530 response", which allows us to track the login failure events regardless of username. 
+```shell
+signature ftp-brute {
+     ip-proto == tcp
+     payload /.*530.*Login.*incorrect.*/
+     event "FTP Brute-force Attempt"
+}
+```
+
+Zeek signature files can consist of multiple signatures. Therefore we can have one file for each protocol/situation/threat type. Let's demonstrate this feature in our global rule.
+
+```shell
+signature ftp-username {
+    ip-proto == tcp
+    ftp /.*USER.*/
+    event "FTP Username Input Found!"
+}
+
+signature ftp-brute {
+    ip-proto == tcp
+     payload /.*530.*Login.*incorrect.*/
+    event "FTP Brute-force Attempt!"
+}
+```
