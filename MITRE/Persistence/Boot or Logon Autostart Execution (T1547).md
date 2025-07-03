@@ -10,5 +10,7 @@
   
 * Mis-Type создал разделы реестра для сохранения, включая `HKCU\Software\bkfouerioyou`, `HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\{6afa8072-b2b1-31a8-b5c1-{Уникальный идентификатор}` и `HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\{3BF41072-B2B1-31A8-B5C1-{Уникальный идентификатор}`.
 
-## T1547.001 Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder
+## T1547.003 Boot or Logon Autostart Execution: Time Providers
 
+Злоумышленники могут проэксплуатировать провайдеров времени (time providers) для запуска DLL библиотек, при старте системы. Служба времени Windows (Windows Time service, W32Time) включает синхронизацию времени между доменами и внутри них. Провайдеры времени реализованы в виде DLL библиотек, которые регистрируются в подразделах `HKLM\System\CurrentControlSet\Services\W32Time\TimeProviders\`. Провайдер времени управляется с помощью service control manager, который загружает и стартует провайдеров времени, перечисленных и включенных в этом ключе, при запуске системы/или при изменение параметров.
+Злоумышленники могут подменить DLL в параметре `DLLName`. Для этого им потребуется права локал.админа, хотя выполнение будет осуществляться в контексте учетной записи локальной службы.
